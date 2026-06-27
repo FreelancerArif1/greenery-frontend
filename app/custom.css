@@ -50,3 +50,6 @@ background: #285e2f;
 .nav-wrapper{
     display: none;
 }
+.dc-btn{
+    margin: 0 auto;
+}
