@@ -25,8 +25,10 @@ const MyComponent = ({data, noButton}) => {
                         //   />
 
                          <MainButton
+                            className={'learnmorebutton'}
                             text={'Learn More'}
                             src={'/about-us'}
+                            
                           />
                         }
                     </Col>
