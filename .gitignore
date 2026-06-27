@@ -84,4 +84,3 @@ bower_components
 .vercel
 .env*.local
 components
-public

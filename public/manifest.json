@@ -1,0 +1,28 @@
+{
+   "name": "Greenery Energy Solution ",
+   "short_name": "Greenery Energy Solution",
+   "description": "Greenery Energy Solution is one of the growing group of companies that excels in providing innovative services across various industries. With a commitment to excellence and a focus on delivering exceptional results, we have established ourselves as a trusted and respected name in the business world.",
+   "theme_color": "#323D54",
+   "background_color": "#ffffff",
+   "start_url": "/",
+   "display": "standalone",
+   "orientation": "portrait",
+   "icons": [
+      {
+         "src": "/images/icons/cropped-BHLG3-192x192.png",
+         "sizes": "192x192",
+         "type": "image/png"
+      },
+      {
+         "src": "/images/icons/cropped-BHLG3-32x32.png",
+         "sizes": "32x32",
+         "type": "image/png"
+      },
+      {
+         "src": "/images/icons/cropped-BHLG3-180x180.png",
+         "sizes": "180x180",
+         "type": "image/png"
+      }
+   ]
+}
+
