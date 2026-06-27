@@ -559,7 +559,8 @@ const StyledComponent = styled.section`
             gap: 20px;
             //padding-left: 90px;
             //padding-bottom: 60px;
-            padding-left: ${prop=>prop?.offset}px;
+            // padding-left: ${prop=>prop?.offset}px;
+                margin: 0 0 0 auto;
             padding-right: ${prop=>prop?.offset + 130}px;
         }
 
