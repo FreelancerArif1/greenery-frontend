@@ -273,12 +273,12 @@ export default function HomeSlider({data,metadata}) {
                                                 <p className="description-mobile-hide">{reactHtmlParser(slide.data?.description)}</p>
                                             </div>
                                             <div className={'bottom-buttons'} >
-                                                <MainButton src={'/contact'} text={'Contact Us'} margin={'0 20px 0 0'}/>
+                                                <MainButton src={'/contact'} text={'Contact With Us'} margin={'0 20px 0 0'}/>
                                                 <MainButton
                                                     src={'/partnership'}
                                                     border={"1px solid white"}
                                                     background={'transparent'}
-                                                    text={'Join Us'}/>
+                                                    text={'Partner With Us'}/>
                                             </div>
                                         </div>
                                     </div>
@@ -289,14 +289,14 @@ export default function HomeSlider({data,metadata}) {
                         <Row className={'h-100'}>
                             <Col lg={12} md={12}>
                                 <div className={"nav-wrapper"}>
-                                    {/* <>
+                                    <>
                                         <div className="progress-bar-container" ref={progressBarRef}>
-                                            {/* <div className="progress-bar" style={{
+                                            <div className="progress-bar" style={{
                                                 width: `${slideWidth}px`,
                                                 transform: `translateX(${progress}px)`,
-                                            }}></div> */}
+                                            }}></div>
                                         </div>
-                                    </> */}
+                                    </>
 
 
                                     <div className={'buttons-wrapper'}>
@@ -514,13 +514,14 @@ const StyledComponent = styled.section`
 
                 /* H1 */
                 color: #FFF;
+
+                /* Medium/h2 */
                 font-family: "Banana Grotesk";
-                font-size: 45px;
-                font-weight: 700;
+                font-size: 64px;
                 font-style: normal;
-                /* font-weight: 500; */
-                line-height: 130%;
-                margin-bottom: 40px;
+                font-weight: 500;
+                line-height: 130%; /* 83.2px */
+                margin-bottom: 20px;
             }
             p{
                 color: #FFF;
@@ -617,14 +618,13 @@ const StyledComponent = styled.section`
         }
 
         .progress-bar-container {
-            display:none;
             position: relative;
             //margin-bottom: 60px;
             padding-left: 15px;
             padding-right: 15px;
             width: 100%; // Changed this line
             height: 3px; // Height of the progress bar
-            // background-color: rgba(255, 255, 255, 0.2); // Track color
+            background-color: rgba(255, 255, 255, 0.2); // Track color
 
             @media(max-width: 767px){
                 margin: 35px 0;
