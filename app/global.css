@@ -1,0 +1,66 @@
+
+@font-face {
+    font-family: 'Banana Grotesk';
+    src: url('/fonts/BananaGrotesk-Regular.woff2') format('woff2'),
+    url('/fonts/BananaGrotesk-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Banana Grotesk';
+    src: url('/fonts/BananaGrotesk-Medium.woff2') format('woff2'),
+    url('/fonts/BananaGrotesk-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter-Regular.woff2') format('woff2'),
+    url('/fonts/Inter-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter-Medium.woff2') format('woff2'),
+    url('/fonts/Inter-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+:root {
+    --font-grotesk: 'Banana Grotesk', sans-serif;
+    --font-inter: 'Inter', sans-serif;
+}
+
+
+.split-line {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.split-parent{
+    overflow: hidden;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.split-child{
+    overflow: hidden;
+    display: inline-block;
+    transform-style: preserve-3d;
+}
+
+/* Ensure fade-up elements are visible by default on mobile or when JS is disabled */
+.fade-up {
+    visibility: visible;
+}
+

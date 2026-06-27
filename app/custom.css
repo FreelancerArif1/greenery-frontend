@@ -1,0 +1,52 @@
+.desktop-menu ul li a {
+    text-transform: uppercase;
+    font-size: 15px !important;
+}
+
+.desktop-menu ul li {
+    font-size: 14px;
+}
+.desktop-menu ul li.has-sub ul a li:hover {
+background: #285e2f;
+}
+.menudropdown .active, .menudropdown .active a li {
+    color: #fff !important;
+}
+.menudropdown .active li{
+    background: #285e2f;
+    color: #fff !important;
+}
+.abouttext{
+    font-size: 16px;
+}
+.footer__right li a, .address a, .abouttext{
+    color: #333 !important;
+}
+.footer-social{
+    margin-top: 10px;
+}
+.footer__logo img{
+    width: 60% !important;
+}
+.contactIconsli{
+    margin-bottom: 5px !important;
+}
+.contactIconsli a{
+    font-size: 15px !important;
+}
+.footer-grid-reset a:hover{
+    color: #285e2f !important;
+}
+.footer{
+        padding-top: 25px  !important;
+    padding-bottom: 5px !important;
+}
+.middlexsection{
+    text-align: center;
+}
+.fade-up{
+    margin-bottom: 20px;
+ }
+.nav-wrapper{
+    display: none;
+}
