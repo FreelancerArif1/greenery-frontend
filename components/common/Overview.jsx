@@ -54,7 +54,14 @@ const StyledMyComponent = styled.section`
     .title {
         margin: 0 0 15px 0;
     }
-  
+    .learnmorebutton{
+        margin:0 auto;
+
+    }
+      .learnmorebutton a{
+        margin:0 auto;
+        
+    }
 `;
 
 
