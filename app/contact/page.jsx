@@ -49,7 +49,7 @@ export default async function MyComponent() {
                       case 'why_us':
                           return <LogoBox data={why_us}/>;
                       case 'map':
-                          return  <AddressMap data={map}/>;
+                        //   return  <AddressMap data={map}/>;
                       default:
                           return null;
                   }

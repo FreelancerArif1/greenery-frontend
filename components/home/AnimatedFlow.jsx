@@ -13,7 +13,7 @@ const MyComponent = ({data }) => {
             <Container>
                 <Row  className={'pb-80'}>
                     <Col md={{span:8,offset:2}}>
-                        <h3 className={'split-up'}>{data?.section_data?.subtitle}</h3>
+                        <h2 className={'split-up'}>{data?.section_data?.subtitle}</h2>
                         <p className={'fade-up'}>{data?.section_data?.short_desc}</p>
                         <div className={'d-flex align-items-center justify-content-center'}>
                             <img src={data?.images?.list?.[0]?.full_path}/>
@@ -53,11 +53,14 @@ const MyComponent = ({data }) => {
 };
 
 const StyledMyComponent = styled.section`
-    h3,p{
+    h2,p{
         text-align: center;
     }
-    h3{
-        margin-bottom: 15px;
+
+    h2{
+         margin-bottom: 15px;
+        font-weight: 600;
+        font-size: 35px;
     }
     p{
         margin-bottom: 74px;

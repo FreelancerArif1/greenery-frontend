@@ -98,6 +98,7 @@ const MyComponent = ({ data }) => {
 export default MyComponent;
 
 const StyledComponent = styled.section`
+
     .overview__counter {
         position: relative;
         z-index: 2;
@@ -169,8 +170,12 @@ const StyledComponent = styled.section`
                     padding: 0;
                     will-change: transform, opacity;
                     @media (max-width: 1400px) {
-                        font-size: 60px;
+                        // font-size: 60px;
+                        // line-height: 64px;
+
+                         font-size: 25px;
                         line-height: 64px;
+                        
                     }
                     @media (max-width: 1200px) {
                         font-size: 42px;

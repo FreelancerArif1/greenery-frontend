@@ -5,6 +5,8 @@ import styled from "styled-components";
 import { Col, Row } from 'react-bootstrap';
 import { Bg } from '@/styles/globalStyleVars';
 import Link from 'next/link';
+import GoogleMap from './Map';
+
 
 const MyComponent = ({data}) => {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -22,7 +24,7 @@ const MyComponent = ({data}) => {
     <StyledComponent className={'contact-map'}>
       <Row>
         <Col md={{ span: 12}}>
-          <Link href={data?.section_data?.subtitle} target={'_blank'}>
+          {/* <Link href={data?.section_data?.subtitle} target={'_blank'}>
             <div className={'image-wrapper'}>
               {isDesktop ?
                 <img src={data?.images?.list?.[0]?.full_path} alt={'background'} />
@@ -30,7 +32,11 @@ const MyComponent = ({data}) => {
                 <img src={data?.images?.list?.[0]?.full_path} alt={'background'} />
               }
             </div>
-          </Link>
+          </Link> */}
+
+          <div className='htmlmap'>
+            <GoogleMap />
+          </div>
         </Col>
       </Row>
     </StyledComponent>

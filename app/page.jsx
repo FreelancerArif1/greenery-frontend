@@ -63,8 +63,8 @@ export default async function Home() {
             <HomeSlider data={home_banner}/>
             <Overview data={overview}/>
             <CounterWrapper data={overview}/>
-            <FeatureProducts data={productsData?.list} sectionData={feature_product}/>
-            {/* <Ourpartner data={productsData?.list} sectionData={feature_product} /> */}
+            {/* <FeatureProducts data={productsData?.list} sectionData={feature_product}/> */}
+            <Ourpartner />
             <AnimatedFlow data={animated_logo}/>
             <AnimatedCircle data={global_leader}/>
             <FeatureProjects data={feature_projects}/>

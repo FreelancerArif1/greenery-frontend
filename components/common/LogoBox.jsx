@@ -18,16 +18,21 @@ const MyComponent = ({data, classes}) => {
                 {
                     data?.section_data?.subtitle &&
                     <Row>
-                        <Col>
+                        <Col lg={2}></Col>
+                        <Col className='text-center' lg={8}>
                             <Title
                               margin={'0 0 30px 0'}
                                 text={data?.section_data?.subtitle}/>
                             <p>GreeneryES empowers partners with globally certified clean-energy technologies and the operational backbone of the Livenza Group. Whether you focus on solar, storage, HVAC, or EV charging, our ecosystem helps you scale your business with confidence.</p>
-                            <MainButton
+                            <div className="beapartner">
+                                <MainButton
                                 margin={'40px 0 0 0'}
                                 src={'/partnership'}
-                                text={'Become a partner'}/>
+                                text={'Be a partner'}/>
+                            </div>
+                            
                         </Col>
+                        <Col lg={2}></Col>
                     </Row>
                 }
 
@@ -62,6 +67,11 @@ const MyComponent = ({data, classes}) => {
 export default MyComponent;
 
 const StyledComponent = styled.section`
+    .beapartner, .beapartner .dc-btn{
+        margin:0 auto !important;
+        padding-top: 20px;
+            height: 70px;
+    }
 
     position: relative;
     overflow: hidden;
@@ -87,7 +97,7 @@ const StyledComponent = styled.section`
     }
 
     p {
-        font-size: 18px;
+        font-size: 16px;
         font-style: normal;
         font-weight: 500;
         line-height: 27px;
@@ -102,8 +112,8 @@ const StyledComponent = styled.section`
         .single-item {
             transition: transform 0.3s ease;
             .wrapper {
-                padding: 40px 32px;
-                height: 100%;
+                padding: 15px;
+                // height: 100%;
                 border-radius: 12px;
                 border: 1.25px solid #629D59;
 
@@ -112,6 +122,7 @@ const StyledComponent = styled.section`
                 .content-wrapper {
                     height: 100%;
                     width: 100%;
+                    text-align: justify;
                     //transform-origin: center;
                 }
                 //&:hover{
@@ -133,7 +144,8 @@ const StyledComponent = styled.section`
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                margin-bottom: 90px;               
+                margin-bottom: 20px;   
+                margin: 20px auto;            
                 
             }
 
@@ -142,9 +154,9 @@ const StyledComponent = styled.section`
 
                 /* Medium/bodyXL */
                 font-family: "Inter";
-                font-size: 24px;
+                font-size: 17px;
                 font-style: normal;
-                font-weight: 500;
+                font-weight: 600;
                 line-height: 140%; /* 33.6px */
                 margin-bottom: 15px;
             }          
@@ -179,6 +191,12 @@ const StyledComponent = styled.section`
         .left{
             margin-top: 27px;
         }
+    }
+
+    h2{
+        font-size: 25px;
+        font-weight: 600;
+        text-transform:uppercase;
     }
     
     

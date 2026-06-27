@@ -28,6 +28,7 @@ const MyComponent = ({data }) => {
                                       </svg>
                                       <a href={data?.section_data?.map} target={'_blank'}>
                                           {ReactHtmlParser(data?.section_data?.subtitle)}
+                                          
                                       </a>
                                   </li>
                                 }
