@@ -20,7 +20,7 @@ const MyComponent = ({data }) => {
                         </div>
                     </Col>
                 </Row>
-                <Row>
+                {/* <Row>
                     {
                         data?.posts?.list && data?.posts?.list?.length>0 &&
                         data?.posts?.list?.map((element)=>{
@@ -44,7 +44,7 @@ const MyComponent = ({data }) => {
                         })
                     }
 
-                </Row>
+                </Row> */}
             </Container>
 
 
