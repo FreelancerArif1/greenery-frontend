@@ -50,3 +50,13 @@ background: #285e2f;
 .nav-wrapper{
     display: none;
 }
+
+.title h2{
+    font-weight: 600 !important;
+    font-size: 25px !important;
+    text-transform:uppercase;
+    color: #000 !important;
+}
+.title{
+    margin: 0 0 20px 0 !important;
+}

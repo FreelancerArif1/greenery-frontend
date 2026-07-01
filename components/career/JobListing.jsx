@@ -17,7 +17,16 @@ const MyComponent = ({ jobs }) => {
   return (
     <StyledComponent>
 
-      <Container className={"jobs"}>
+      <Container>
+        <Row>
+          <Col md={8}>
+              <Title classname={'title'} text={'Job Circular'}/>
+            </Col>
+          <Col md={2}> </Col>
+        </Row>
+      </Container>
+      
+      {/* <Container className={"jobs"}>
         <Row>
           <Col md={12}>
             <Title
@@ -39,12 +48,81 @@ const MyComponent = ({ jobs }) => {
             ))}
           </Col>
         </Row>
+      </Container> */}
+
+
+
+
+
+
+
+      <Container className={"jobs"}>
+        {jobData?.posts?.list?.map((i, index) => (
+        <Row className="singleJob" key={index}>
+          <Col md={1}>
+            <div className="jobnumber">{index+1}</div>
+          </Col>
+          <Col md={6}>
+            <div className="jobdescribtion">
+              <b>{reactHtmlParser(i?.data?.subtitle)}</b> <br />
+              <p>{reactHtmlParser(i?.data?.description)}</p>
+            </div>
+          </Col>
+          <Col md={3}>
+            <b>Deadline</b> <br />
+            <p> 30 May 26</p>
+          </Col>
+          <Col md={2}>
+          <MainButton
+                  externalSrc={i?.data?.btn_link}
+                  text={"Apply Now"}
+                /></Col>
+        </Row>
+        ))}
+
+
       </Container>
+
+
+
+
     </StyledComponent>
   );
 };
 
 const StyledComponent = styled.section`
+.jobnumber{
+
+    padding: 10px 30px;
+    height: 44px;
+    display: block;
+    width: fit-content;
+    background-color: #285E2F;
+    color: #ffffff;
+    border-radius: 10px;
+    font-weight: 400;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    font-family: "Inter" !important;
+    line-height: 24px !important;
+    position: relative;
+    transition: background-color 0.5s ease;
+    border: none;
+}
+.singleJob{
+    border: 1px solid #285e2f21;
+    border-radius: 5px;
+    padding: 10px 0px;
+    margin-bottom:15px;
+}
+  .singleJob p{
+    font-size:16px;
+  }
+
   padding-bottom: 120px;
   position: relative;
     padding-top: 100px;

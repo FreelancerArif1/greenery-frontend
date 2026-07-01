@@ -100,17 +100,7 @@ const StyledComponent = styled.section`
     padding-top: 120px !important;
 }
 
-h2 {
-    font-weight: 600;
-    font-size: 25px;
-    text-transform:uppercase;
-    color: #285E2F;
-}
 
-.title{
-    margin: 0 0 20px 0;
-    color: #285E2F;
-}
 
 .swiper {
     width: 100%;
