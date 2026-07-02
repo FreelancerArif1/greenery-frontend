@@ -79,7 +79,7 @@ const Message = ({offset}) => {
           <div className={'message_wrapper'}>
               <ul className={'social_list'}>
                   <li>
-                      <a href="https://wa.me/+88XXXXXXXXX" target={"_blank"}>
+                      <a href="https://wa.me/+8809639272106" target={"_blank"}>
                           <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
                               <g id="Group_19685" data-name="Group 19685" transform="translate(0.309 0.309)">
                                   <circle id="Ellipse_335" data-name="Ellipse 335" cx="25" cy="25" r="25"

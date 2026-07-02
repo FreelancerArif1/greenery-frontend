@@ -72,7 +72,10 @@ const MyComponent = ({ data }) => {
                                 data?.posts?.list?.map((item, index) => {
                                     return (
                                       <Row className="overview__counter__wrap__number__row" key={index}>
-                                        <Col lg={6}>
+                                           <Col lg={8}>
+                                          <p className={'fade-up'} key={index}>{item?.data?.subtitle}</p>
+                                        </Col>
+                                        <Col lg={4}>
                                           <h2
                                             className="counter-number"
                                             data-target={item?.data?.short_desc}
@@ -80,9 +83,7 @@ const MyComponent = ({ data }) => {
                                             0
                                           </h2>
                                         </Col>
-                                        <Col lg={6}>
-                                          <p className={'fade-up'} key={index}>{item?.data?.subtitle}</p>
-                                        </Col>
+                                     
                                       </Row>
                                 )
                                 })
@@ -145,7 +146,7 @@ const StyledComponent = styled.section`
                 justify-content: center;
                 .overview__counter__wrap__number__row{
                     border-bottom: 1px solid rgba(0,0,0,0.1);
-                    padding: 10px 0;
+                    padding: 20px 0;
                     &:first-child{
                         padding-top: 0;
                     }
@@ -174,7 +175,7 @@ const StyledComponent = styled.section`
                         // line-height: 64px;
 
                          font-size: 25px;
-                        line-height: 64px;
+                        line-height: 25px;
                         
                     }
                     @media (max-width: 1200px) {
@@ -183,7 +184,7 @@ const StyledComponent = styled.section`
                     }
                 }
                 p{
-                    text-align: right;
+                    // text-align: right;
                 }
             }
 

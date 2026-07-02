@@ -9,7 +9,7 @@ import Link from 'next/link';
 const MyComponent = ({data }) => {
 
     return (
-        <StyledMyComponent className={'pt-120 pb-120'}>
+        <StyledMyComponent className={'pt-100 pb-50'}>
             <Container>
                 <Row  className={'pb-80'}>
                     <Col md={{span:8,offset:2}}>

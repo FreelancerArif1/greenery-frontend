@@ -28,7 +28,7 @@ export default function ComplianceSlider({ data }) {
   }, []);
 
   return (
-    <StyledComponent className={'compliance-slider pt-120 pb-120'} offset={offset}>
+    <StyledComponent className={'compliance-slider pt-80 pb-80'} offset={offset}>
       <Container className={""}>
         <Row>
           <Col lg={4} className={'compliance-slider__title-wrapper'}>

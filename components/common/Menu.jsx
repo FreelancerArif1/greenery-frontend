@@ -9,10 +9,17 @@ import {CSSPlugin} from "gsap";
 import {usePathname} from "next/navigation";
 import {getApi} from "@/api";
 import MainButton from "@/components/common/Buttons/MainButton";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
+
+
+
 
 gsap.registerPlugin(CSSPlugin);
 
 const MyComponent = () => {
+    const [showSearch, setShowSearch] = useState(false);
 
     let [menuItems, setMenuItems] = useState('false');
     const [tl] = useState(new TimelineLite());
@@ -422,6 +429,46 @@ const MyComponent = () => {
                                     <li className={pathname === '/contact' ? 'active' : ''}>
                                         <Link prefetch={true} href={'/contact'}>Contact</Link>
                                     </li>
+                                    {/* <li> <div className="search_icon"> <FontAwesomeIcon icon={faSearch} size="lg" /> </div> </li> */}
+
+      
+
+
+
+
+
+
+<li className="search-item">
+        <div
+          className="search_icon"
+          onClick={() => setShowSearch(!showSearch)}
+        >
+          <FontAwesomeIcon icon={faSearch} size="lg" />
+        </div>
+
+        {showSearch && (
+            <div className="products"> 
+                <input
+                    type="text"
+                    className="search-input"
+                    placeholder="Search products..."
+                    autoFocus
+                />
+                <div className="product_list">
+                   <div className="single_product">  name  </div>
+                   <div className="single_product">  name  </div>
+                   <div className="single_product">  name  </div>
+                   <div className="single_product">  name  </div>
+                </div>
+            </div>
+        )}
+      </li>
+
+
+
+
+
+
                                 </ul>
                                 {/*<ul className={'d-flex justify-content-between align-items-center'}>*/}
                                 {/*  <li className={'search-bar'}>*/}
@@ -677,6 +724,7 @@ const MyComponent = () => {
                                     <li><Link prefetch={true} href={'/media'}>Media</Link></li>
                                     <li><Link prefetch={true} href={'/career'}>Career</Link></li>
                                     <li><Link prefetch={true} href={'/contact'}>Contact Us</Link></li>
+                                    
                                 </Accordion>
                             </ul>
                         </div>

@@ -4,6 +4,8 @@ import Overview from "@/components/common/Overview";
 import CounterWrapper from '@/components/common/CounterWrapper';
 import FeatureProducts from '@/components/home/FeatureProducts';
 import Ourpartner from '@/components/home/Ourpartner';
+import Ourcirtificate from '@/components/home/Ourcirtificate';
+import Ourclients from '@/components/home/Ourclients';
 
 import FeatureProjects from '@/components/energy-system/FeatureProjects';
 import ComplianceSlider from '@/components/energy-system/ComplianceSlider';
@@ -66,7 +68,9 @@ export default async function Home() {
             {/* <FeatureProducts data={productsData?.list} sectionData={feature_product}/> */}
             <Ourpartner />
             <AnimatedFlow data={animated_logo}/>
+            <Ourcirtificate />
             <AnimatedCircle data={global_leader}/>
+            <Ourclients />
             <FeatureProjects data={feature_projects}/>
             <ComplianceSlider data={compliance_slider} />
             <Sustainability data={sustainability}/>

@@ -11,13 +11,15 @@ const MyComponent = ({data }) => {
             <Container>
                 <Row>
                     <Col lg={5}>
-                        <Title
-                            text={data?.section_data?.subtitle}
-                            margin={'0 0 20px 0'}
-                        />
-                        <p className={'fade-up'}>{data?.section_data?.short_desc}</p>
+                        <div className="verticalcenter">
+                            <Title
+                                text={data?.section_data?.subtitle}
+                                margin={'0 0 20px 0'}
+                            />
+                            <p className={'fade-up'}>{data?.section_data?.short_desc}</p>
+                        </div>
                     </Col>
-                    <Col lg={{offset:2, span:5}} className={'logos__bottom'}>
+                    <Col lg={{offset:1, span:6}} className={'logos__bottom'}>
                         <LogoContainer>
                             {
                                 data?.images?.list && data?.images?.list?.length > 0 && (
@@ -60,7 +62,7 @@ const MyComponent = ({data }) => {
 };
 
 const StyledMyComponent = styled.section`
-    padding: 80px 0;
+    padding: 80px 0px 0px 0px;
     h6{
         font-size: 24px;
         opacity: 0.8;
