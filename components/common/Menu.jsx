@@ -11,6 +11,7 @@ import {getApi} from "@/api";
 import MainButton from "@/components/common/Buttons/MainButton";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 
 
 
@@ -19,7 +20,62 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 gsap.registerPlugin(CSSPlugin);
 
 const MyComponent = () => {
+
+    const services = [
+        {
+            id: 1,
+            image: "https://picsum.photos/400/300?random=1",
+            title: "Modern Web Development",
+            shortDescription:
+            "Build fast, responsive, and scalable websites using the latest technologies.",
+        },
+        {
+            id: 2,
+            image: "https://picsum.photos/400/300?random=2",
+            title: "Mobile App Design",
+            shortDescription:
+            "Create intuitive and engaging mobile applications for Android and iOS.",
+        },
+        {
+            id: 3,
+            image: "https://picsum.photos/400/300?random=3",
+            title: "UI/UX Design",
+            shortDescription:
+            "Design clean, user-friendly interfaces that enhance the user experience.",
+        },
+        {
+            id: 4,
+            image: "https://picsum.photos/400/300?random=4",
+            title: "Digital Marketing",
+            shortDescription:
+            "Grow your online presence with effective SEO, social media, and advertising.",
+        },
+        {
+            id: 5,
+            image: "https://picsum.photos/400/300?random=5",
+            title: "Cloud Solutions",
+            shortDescription:
+            "Secure and scalable cloud infrastructure tailored to your business needs.",
+        },
+        {
+            id: 6,
+            image: "https://picsum.photos/400/300?random=6",
+            title: "E-commerce Development",
+            shortDescription:
+            "Launch powerful online stores with seamless shopping experiences.",
+        },
+    ];
+
     const [showSearch, setShowSearch] = useState(false);
+    const [searchTerm, setSearchTerm] = useState("");
+
+    const filteredServices =
+            searchTerm.trim() === ""
+            ? []
+            : services.filter((item) =>
+            item.title.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+
 
     let [menuItems, setMenuItems] = useState('false');
     const [tl] = useState(new TimelineLite());
@@ -89,6 +145,18 @@ const MyComponent = () => {
     const hamburgerRef = useRef(null)
     const menuRef = useRef(null)
     const mobileMenuRaf = useRef(null)
+    const searchRef = useRef(null)
+    useEffect(() => {
+        function handleClickOutside(event) {
+            if (searchRef.current && !searchRef.current.contains(event.target)) {
+            setShowSearch(false);
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
 
     useEffect(() => {
         // window.addEventListener('scroll', function () {
@@ -429,40 +497,64 @@ const MyComponent = () => {
                                     <li className={pathname === '/contact' ? 'active' : ''}>
                                         <Link prefetch={true} href={'/contact'}>Contact</Link>
                                     </li>
-                                    {/* <li> <div className="search_icon"> <FontAwesomeIcon icon={faSearch} size="lg" /> </div> </li> */}
+                                    
 
-      
+                                    <li className="search-item" ref={searchRef}>
+                                        <div
+                                            className="search_icon"
+                                            onClick={() => setShowSearch(!showSearch)}
+                                        >
+                                            <FontAwesomeIcon icon={faSearch} size="lg" />
+                                        </div>
 
+                                        {showSearch && (
+                                            <div className="products"> 
+                                                <input
+                                                    type="text"
+                                                      className={`search-input ${
+                                                            filteredServices.length > 0 && searchTerm.trim() !== ""
+                                                            ? "has-results"
+                                                            : "no-results"
+                                                        }`}
+                                                    placeholder="Search products..."
+                                                    value={searchTerm}
+                                                    onChange={(e) => setSearchTerm(e.target.value)}
+                                                    autoFocus
+                                                />
+                                                {searchTerm.trim() !== "" && (
+                                                    filteredServices.length > 0 ? (
+                                                    filteredServices.map((item) => (
+                                                        <div className="product_list">
+                                                        <Link href="/" key={item.id} prefetch={true}>
+                                                        <div className="single_product">
+                                                            <Row>
+                                                            <Col md={3}>
+                                                                <Image
+                                                                src={item.image}
+                                                                alt={item.title}
+                                                                width={300}
+                                                                height={300}
+                                                                />
+                                                            </Col>
 
-
-
-
-
-<li className="search-item">
-        <div
-          className="search_icon"
-          onClick={() => setShowSearch(!showSearch)}
-        >
-          <FontAwesomeIcon icon={faSearch} size="lg" />
-        </div>
-
-        {showSearch && (
-            <div className="products"> 
-                <input
-                    type="text"
-                    className="search-input"
-                    placeholder="Search products..."
-                    autoFocus
-                />
-                <div className="product_list">
-                   <div className="single_product">  name  </div>
-                   <div className="single_product">  name  </div>
-                   <div className="single_product">  name  </div>
-                   <div className="single_product">  name  </div>
-                </div>
-            </div>
-        )}
-      </li>
+                                                            <Col md={9} className="pl-0">
+                                                                <b className="product_title">{item.title}</b>
+                                                                <p className="product_short">{item.shortDescription}</p>
+                                                            </Col>
+                                                            </Row>
+                                                        </div>
+                                                        </Link>
+                                                        </div>
+                                                    ))
+                                                    ) : (
+                                                    <div className="no-result">
+                                                        No products found.
+                                                    </div>
+                                                    )
+                                                )}
+                                            </div>
+                                        )}
+                                    </li>
 
 
 
@@ -1531,6 +1623,10 @@ const StyledMenu = styled.section`
                 // background: transparent !important;
             }
         }
+    }
+
+    .product_title, .product_short{
+        color: #000 !important;
     }
 
 `;
