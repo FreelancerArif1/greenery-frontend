@@ -78,12 +78,12 @@ export default function CTA({data, noFirstButton,noSecondButton}) {
       <div className={'left-top-vector'} ref={leftTopVectorRef}>
         <img src={'/images/static/01.png'} alt="Decorative vector"/>
       </div>
-      <div className={'right-top-vector'} ref={rightTopVectorRef}>
+      {/* <div className={'right-top-vector'} ref={rightTopVectorRef}>
         <img src={'/images/static/02.png'} alt="Decorative vector"/>
       </div>
       <div className={'right-bottom-vector'} ref={rightBottomVectorRef}>
         <img src={'/images/static/03.png'} alt="Decorative vector"/>
-      </div>
+      </div> */}
       <div className={'content'}>
         <Title text={data?.section_data?.subtitle}/>
         <p className={'fade-up'}>{reactHtmlParser(data?.section_data?.description)}</p>

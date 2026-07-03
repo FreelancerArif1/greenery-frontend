@@ -155,3 +155,10 @@ background: #285e2f;
 .no-results{
     border-radius:5px;
 }
+.blog-single__inner__content{
+    display: none;
+}
+.blog-single:hover .blog-single__inner__content{
+    display: block;
+
+}
