@@ -177,7 +177,7 @@ const BlogSliderV1 = ({data}) => {
 };
 
 const StyledBlog = styled.section`
-    background: #EFF1ED;
+    background: #f0f4f0;
     
     .mobile-buttons{
         display: none;

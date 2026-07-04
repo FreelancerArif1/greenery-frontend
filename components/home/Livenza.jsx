@@ -1,112 +1,103 @@
-'use client';
-import styled from 'styled-components';
+'use client'
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
 import { Col, Container, Row } from 'react-bootstrap';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import "swiper/css/effect-fade";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import reactHtmlParser from "react-html-parser";
 import Title from '@/components/common/Title/Title';
-import { Green, White } from '@/styles/globalStyleVars';
-import reactHtmlParser from 'react-html-parser';
-import LivenzaSlider from '@/components/home/Livenza';
+import NavigationButton from '@/components/common/Buttons/NavigationButton';
+import { Img } from '@/components/common/Image/Img';
+import Link from 'next/link';
+
+import 'swiper/css';
+
+const MyComponent = ({data}) => {
+  return (
+    <StyledComponent className="ourpartner pt-120">
+        <Container>
+            <Row className="parnter">
+            <Col md={8}>
+                <Title classname={'title'} text={'Concerns of Livenza Group'}/>
+             </Col>
+            <Col md={2}> </Col>
+
+            </Row>
+
+            <Row>
+                <Swiper
+                modules={[Autoplay]}
+                slidesPerView={3}
+                spaceBetween={15}
+                loop={true}
+                speed={1500}
+                autoplay={{
+                    delay: 1000,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: false,
+                }}
+                pagination={{
+                clickable: true,
+                }}
+                allowTouchMove={true}
+                >
 
 
-export default function Livenza({data}) {
-  // Livenza Group Concerns Data
+                 {data?.posts?.list?.map((concern) => (
+                    <SwiperSlide key={concern?.data?.id}>
+                        <div className="slide2">
+                            <ConcernCard>
+                                <div className={'card-header'}>
+                                    <div className={'icon-box'}>
+                                    <img src={concern?.images?.[0]?.full_path} alt={concern?.data?.title} className={'icon'}/>
+                                    </div>
+                                </div>
+                                <div className={'card-content'}>
+                                    <h3 className={'concern-name'}>{reactHtmlParser(concern.data?.subtitle)}</h3>
+                                </div>
+                            </ConcernCard>
+                        </div>
+                    </SwiperSlide>
+                ))}
 
-  return(
-    <StyledComponent className={'pt-120 pb-120'}>
-      <Container>
-        <Row className={'mb-80'}>
-
-          <Col lg={2}></Col>
-          <Col lg={8} className='text-center'>
-            <Title text={'The Livenza Ecosystem'}/>
-            <p className={'ecosystem-desc'}>As a concern of Livenza Group, GreeneryES benefits from a multi-sector backbone spanning clean energy, manufacturing, logistics, automotive, and global sourcing. This ecosystem ensures speed, scalability, and supply-chain reliability across every project.</p>
-          </Col>
-          <Col lg={2}></Col>
-        </Row>
-        {/* <Row className={'mb-60'}>
-          <Col md={12}>
-            <h2 className={'section-heading'}>Concerns of Livenza Group</h2>
-          </Col>
-        </Row>
-        <Row className={'concerns-grid'}>
-          {data?.posts?.list?.map((concern) => (
-            <Col lg={4} md={6} sm={12} key={concern?.data?.id} className={'mb-40'}>
-              <ConcernCard>
-                <div className={'card-header'}>
-                  <div className={'icon-box'}>
-                    <img src={concern?.images?.[0]?.full_path} alt={concern?.data?.title} className={'icon'}/>
-                  </div>
-                </div>
-                <div className={'card-content'}>
-                  <h3 className={'concern-name'}>{reactHtmlParser(concern.data?.subtitle)}</h3>
-                </div>
-              </ConcernCard>
-            </Col>
-          ))}
-        </Row> */}
-      </Container>
+            </Swiper>
+            </Row>
+        </Container>
 
 
-      <LivenzaSlider data={data}></LivenzaSlider>
+
+
     </StyledComponent>
-  )
-}
+  );
+};
 
 const StyledComponent = styled.section`
-    position: relative;
-    background: #FFF;
-    padding-top: 120px;
-    padding-bottom: 120px;
+.ourpartner{
+    padding-top: 120px !important;
+}
 
-    .ecosystem-desc {
-      font-size: 18px;
-      line-height: 1.8;
-      color: #555;
-      margin-top: 40px;
-      font-family: "Inter", sans-serif;
-    }
 
-    .section-heading {
-      font-family: "Banana Grotesk", sans-serif;
-      font-size: 32px;
-      font-weight: 600;
-      color: #000;
-      position: relative;
-      padding-bottom: 20px;
-        margin-top: 40px;
 
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 80px;
-        height: 4px;
-        background: ${Green};
-        border-radius: 2px;
-      }
-    }
+.swiper {
+    width: 100%;
+}
 
-    .concerns-grid {
-      margin-top: 60px;
-    }
-    
-    .col-lg-4{
-        margin-bottom: 30px;
-    }
-
-    @media (max-width: 767px) {
-      padding-top: 80px;
-      padding-bottom: 80px;
-
-      .section-heading {
-        font-size: 32px;
-        margin-bottom: 40px;
-      }
-
-      .ecosystem-desc {
-        font-size: 16px;
-      }
-    }
+.slide {
+    height: 120px;
+    border-radius: 10px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+}
 `;
 
 const ConcernCard = styled.div`
@@ -264,3 +255,5 @@ const ConcernCard = styled.div`
     }
   }
 `;
+
+export default MyComponent;

@@ -6,6 +6,7 @@ import { Black, DarkBlue, hover, White } from '@/styles/globalStyleVars';
 
 const MyComponent = ({
                          borderColor,
+                         nameofClass,
                          svg,
                          height,width,
                          background,hoverBackground
@@ -38,7 +39,7 @@ const MyComponent = ({
             hoverBackground={hoverBackground}
             isProjectPage={isProjectPage} isLandowner={isLandowner}
         >
-             <span className='circle '>
+             <span className={'circle '+nameofClass}>
                  {ReactHtmlParser(svg)}
              </span>
         </StyledComponent>
@@ -46,6 +47,7 @@ const MyComponent = ({
 };
 
 const StyledComponent = styled.div`
+
   cursor: pointer;
    
 
@@ -56,7 +58,7 @@ const StyledComponent = styled.div`
     border-radius: 50%;
     // border: 1px solid ${p => p.isProjectPage || p.isLandowner ? `${text}` : (p.borderColor || `${Black}`)};
 
-    border: 1px solid ${p => p.borderColor || `${Black}`};
+    // border: 1px solid ${p => p.borderColor || `${Black}`};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -116,6 +118,27 @@ const StyledComponent = styled.div`
       }
     }
   }
+
+  .logofacebook, .logofacebook:hover{
+    background:#1877F2;
+  }
+  .logoinstagram, .logoinstagram:hover{
+    background: linear-gradient(
+  45deg,
+  #F58529,
+  #FEDA77,
+  #DD2A7B,
+  #8134AF,
+  #515BD4
+);
+  }
+  .logolinkedin, .logolinkedin:hover{
+    background:#0A66C2;
+  }
+  .logoyoutube, .logoyoutube:hover{
+    background:#FF0000;
+  }
+  
 `;
 // Pass a svg with a classname in the path named class="path";
 

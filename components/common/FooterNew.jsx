@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Col, Container, Row } from 'react-bootstrap';
 import Link from 'next/link';
 import SvgButton from '@/components/common/Buttons/SvgButton';
-import {Black, Green, White} from '@/styles/globalStyleVars';
+import {Black, Green, White, logofacebook} from '@/styles/globalStyleVars';
 import { useGlobalData } from '@/context/GlobalContext';
 import MainButton from "@/components/common/Buttons/MainButton";
 
@@ -82,9 +82,11 @@ const MyComponent = ({ }) => {
                                   <li>
                                     <a href={'https://www.facebook.com/GreeneryES'} target="_blank">
                                       <SvgButton svg={fb}
-                                                 borderColor={`${Black}`}
-                                                 width={30}
-                                                 height={30}
+                                                //  borderColor={`${Black}`}
+                                                 borderColor={``}
+                                                 width={25}
+                                                  height={25}
+                                                 nameofClass={'logofacebook'}
                                       />
                                     </a>
                                   </li>
@@ -92,8 +94,9 @@ const MyComponent = ({ }) => {
                                     <a href={'https://www.instagram.com/greenery_es_ltd?igsh=MXQ5ejU4c3h3d3Z1Yw=='} target="_blank">
                                       <SvgButton svg={demo}
                                                  borderColor={`${Black}`}
-                                                 width={30}
-                                                 height={30}
+                                                 width={25}
+                                                  height={25}
+                                                 nameofClass={'logoinstagram'}
                                       />
                                     </a>
                                   </li>
@@ -101,8 +104,9 @@ const MyComponent = ({ }) => {
                                     <a href={'https://www.linkedin.com/company/111514964/admin/dashboard/ '} target="_blank">
                                       <SvgButton svg={ln}
                                                  borderColor={`${Black}`}
-                                                 width={30}
-                                                 height={30}
+                                                 width={25}
+                                                  height={25}
+                                                nameofClass={'logolinkedin'}
                                       />
                                     </a>
                                   </li>
@@ -110,8 +114,9 @@ const MyComponent = ({ }) => {
                                     <a href={'https://youtube.com/@greeneryenergysolutionltd?si=vhJ8duWmZ6rhzUmt '} target="_blank">
                                       <SvgButton svg={youtube}
                                                  borderColor={`${Black}`}
-                                                 width={30}
-                                                 height={30}
+                                                 width={25}
+                                                  height={25}
+                                                 nameofClass={'logoyoutube'}
                                       />
                                     </a>
                                   </li>
@@ -153,8 +158,8 @@ const MyComponent = ({ }) => {
                                     {/* <h5>Email</h5> */}
 
                                      
-                                    <li className='contactIconsli'><a href={'tel:+8809639272106'}><FontAwesomeIcon icon={faPhone} size="sm" /> +8809639272106</a></li>
-                                    <li className='contactIconsli'><a href={'tel:+8801521747410'}><FontAwesomeIcon icon={faPhone} size="sm" /> +8801521 747410</a></li>
+                                    <li className='contactIconsli'><a href={'tel:09639272106'}><FontAwesomeIcon icon={faPhone} size="sm" /> 09639272106</a></li>
+                                    {/* <li className='contactIconsli'><a href={'tel:+8801521747410'}><FontAwesomeIcon icon={faPhone} size="sm" /> +8801521 747410</a></li> */}
                                     <li  className='contactIconsli'><a href={'mailto:info@greeneryes.com'}><FontAwesomeIcon icon={faEnvelope} size="sm" /> info@greeneryes.com</a></li>
                                   
                                   </div>
@@ -179,7 +184,7 @@ const MyComponent = ({ }) => {
                 <Col md={12}>
                   <div className={'footer-bottom'}>
                     <p>© 2026 GreeneryES. All rights reserved.</p>
-                    <p><a href={'https://dcastalia.com/'} target={'_blank'}>Site by Dcastalia</a></p>
+                    <p>Developed by <a href={'https://expotechltd.com.expoaccessories.com'} target={'_blank'}> Expo Technology</a></p>
                   </div>
                 </Col>
               </Row>
@@ -348,7 +353,7 @@ const StyledMyComponent = styled.section`
       }
     ul{
       display: flex;
-        gap: 15px;
+        gap: 10px;
         
     }
     

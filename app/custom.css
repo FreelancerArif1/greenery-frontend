@@ -86,9 +86,9 @@ background: #285e2f;
     padding-top: 32px;
     text-align: center;
 }
-.products{
+.searchproducts{
     position: absolute;
-    top: 80px;
+    top: 86px;
     right: 0;
     width: 480px;
     background: #fff;
@@ -161,4 +161,16 @@ background: #285e2f;
 .blog-single:hover .blog-single__inner__content{
     display: block;
 
+}
+
+.searchproducts::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: -5px;
+    left: 97%;
+    transform: translateX(-50%) rotate(45deg);
+    background-color: #ffffff;
+    border-radius: 0.01rem;
 }

@@ -118,7 +118,7 @@ export default function Preloader() {
           </defs>
         </svg>
       </div>
-      <p>Greenery Energy Solution Ltd.</p>
+      {/* <p>Greenery Energy Solution Ltd.</p> */}
 
     </StyledComponent>
   );

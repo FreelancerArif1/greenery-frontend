@@ -508,7 +508,7 @@ const MyComponent = () => {
                                         </div>
 
                                         {showSearch && (
-                                            <div className="products"> 
+                                            <div className="searchproducts"> 
                                                 <input
                                                     type="text"
                                                       className={`search-input ${
