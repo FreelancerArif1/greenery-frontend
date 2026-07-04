@@ -12,15 +12,33 @@ import MainButton from "@/components/common/Buttons/MainButton";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
-
+const apiValue = "home-page"
 
 
 
 
 gsap.registerPlugin(CSSPlugin);
-
 const MyComponent = () => {
 
+
+    const [productsData, setProductsData] = useState([]);
+    const [showSearch, setShowSearch] = useState(false);
+    const [searchTerm, setSearchTerm] = useState("");
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const data = await getApi(apiValue);
+            const list = data?.data?.feature_products?.list || [];
+
+            setProductsData(list);
+            console.log("productsData =", list);
+        };
+
+        fetchData();
+    }, []);
+    
+
+    
     const services = [
         {
             id: 1,
@@ -65,16 +83,14 @@ const MyComponent = () => {
             "Launch powerful online stores with seamless shopping experiences.",
         },
     ];
-
-    const [showSearch, setShowSearch] = useState(false);
-    const [searchTerm, setSearchTerm] = useState("");
+ 
 
     const filteredServices =
-            searchTerm.trim() === ""
-            ? []
-            : services.filter((item) =>
-            item.title.toLowerCase().includes(searchTerm.toLowerCase())
-      );
+    searchTerm.trim() === ""
+        ? []
+        : productsData.filter((item) =>
+              item.product_data.title.toLowerCase().includes(searchTerm.toLowerCase())
+          );
 
 
     let [menuItems, setMenuItems] = useState('false');
@@ -528,18 +544,20 @@ const MyComponent = () => {
                                                         <Link href="/" key={item.id} prefetch={true}>
                                                         <div className="single_product">
                                                             <Row>
-                                                            <Col md={3}>
+                                                            <Col className='menuproductimage' md={3}>
                                                                 <Image
-                                                                src={item.image}
-                                                                alt={item.title}
-                                                                width={300}
-                                                                height={300}
-                                                                />
+                                                                    src={item?.images?.list?.[0]?.full_path}
+                                                                    width={300}
+                                                                    height={300}
+                                                                    />
                                                             </Col>
 
                                                             <Col md={9} className="pl-0">
-                                                                <b className="product_title">{item.title}</b>
-                                                                <p className="product_short">{item.shortDescription}</p>
+                                                                <b className="product_title">{item.product_data.title}</b>
+                                                                <p className="product_short">{item?.product_data.short_desc || item?.product_data.description}
+
+
+                                                                </p>
                                                             </Col>
                                                             </Row>
                                                         </div>

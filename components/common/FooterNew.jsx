@@ -158,7 +158,7 @@ const MyComponent = ({ }) => {
                                     {/* <h5>Email</h5> */}
 
                                      
-                                    <li className='contactIconsli'><a href={'tel:09639272106'}><FontAwesomeIcon icon={faPhone} size="sm" /> 09639272106</a></li>
+                                    <li className='contactIconsli'><a href={'tel:+8801324251244'}><FontAwesomeIcon icon={faPhone} size="sm" /> +8801324251244</a></li>
                                     {/* <li className='contactIconsli'><a href={'tel:+8801521747410'}><FontAwesomeIcon icon={faPhone} size="sm" /> +8801521 747410</a></li> */}
                                     <li  className='contactIconsli'><a href={'mailto:info@greeneryes.com'}><FontAwesomeIcon icon={faEnvelope} size="sm" /> info@greeneryes.com</a></li>
                                   

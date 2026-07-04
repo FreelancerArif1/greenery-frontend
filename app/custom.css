@@ -143,7 +143,8 @@ background: #285e2f;
     white-space: nowrap;
     text-overflow: ellipsis;
     text-transform: capitalize;
-    
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .no-result{
@@ -173,4 +174,7 @@ background: #285e2f;
     transform: translateX(-50%) rotate(45deg);
     background-color: #ffffff;
     border-radius: 0.01rem;
+}
+.menuproductimage img{
+    max-height: 100px !important;
 }
