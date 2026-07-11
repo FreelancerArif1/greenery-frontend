@@ -115,7 +115,7 @@ const StyledComponent = styled.section`
                 padding: 15px;
                 // height: 100%;
                 border-radius: 12px;
-                border: 1.25px solid #629D59;
+                border: 1.25px solid rgb(238 238 238);
 
                 //transition: all .5s;
                 //clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
