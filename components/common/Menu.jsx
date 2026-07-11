@@ -541,24 +541,24 @@ const MyComponent = () => {
                                                     filteredServices.length > 0 ? (
                                                     filteredServices.map((item) => (
                                                         <div className="product_list">
-                                                        <Link href="/" key={item.id} prefetch={true}>
+                                                        <Link href={`/products/${item?.product_data?.slug}`}  key={item.id} prefetch={true}>
                                                         <div className="single_product">
                                                             <Row>
-                                                            <Col className='menuproductimage' md={3}>
-                                                                <Image
-                                                                    src={item?.images?.list?.[0]?.full_path}
-                                                                    width={300}
-                                                                    height={300}
-                                                                    />
-                                                            </Col>
+                                                                <Col className='menuproductimage' md={3}>
+                                                                    <Image
+                                                                        src={item?.images?.list?.[0]?.full_path}
+                                                                        width={300}
+                                                                        height={300}
+                                                                        />
+                                                                </Col>
 
-                                                            <Col md={9} className="pl-0">
-                                                                <b className="product_title">{item.product_data.title}</b>
-                                                                <p className="product_short">{item?.product_data.short_desc || item?.product_data.description}
+                                                                <Col md={9} className="pl-0">
+                                                                    <b className="product_title">{item.product_data.title}</b>
+                                                                    <p className="product_short">{item?.product_data.short_desc || item?.product_data.description}
 
 
-                                                                </p>
-                                                            </Col>
+                                                                    </p>
+                                                                </Col>
                                                             </Row>
                                                         </div>
                                                         </Link>

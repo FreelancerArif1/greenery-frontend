@@ -68,12 +68,17 @@ export default async function Home() {
             <CounterWrapper data={overview}/>
             {/* <FeatureProducts data={productsData?.list} sectionData={feature_product}/> */}
             <Ourpartner />
-            <AnimatedFlow data={animated_logo}/>
-            <Ourcirtificate />
+            {/* <AnimatedFlow data={animated_logo}/> */}
+
             <AnimatedCircle data={global_leader}/>
-            <Ourclients />
+            
+            {/* <Ourclients /> */}
+            {/* <Ourcirtificate /> */}
+
             <FeatureProjects data={feature_projects}/>
+
             <ComplianceSlider data={compliance_slider} />
+
             <Sustainability data={sustainability}/>
             <CTA data={cta} noFirstButton/>
             <BlogContainer data={data}/>

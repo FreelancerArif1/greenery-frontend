@@ -14,10 +14,22 @@ import Title from '@/components/common/Title/Title';
 import NavigationButton from '@/components/common/Buttons/NavigationButton';
 import { Img } from '@/components/common/Image/Img';
 import Link from 'next/link';
+import Image from "next/image";
 
 import 'swiper/css';
 
 const MyComponent = () => {
+    const partners = [
+    "/images/partners/BD-Shop-01.png",
+    "/images/partners/Compliance-BD-ltd.-01.png",
+    "/images/partners/Famous-Energy-01.png",
+    "/images/partners/KR-Tech-01.png",
+    "/images/partners/MA'S-Engineering-01.png",
+    "/images/partners/MicroTech-01.png",
+    "/images/partners/Mim-Electronics-01.png",
+    "/images/partners/Pickaboo-01.png",
+    "/images/partners/Rupa-Electric-01.png",
+    ];
   return (
     <StyledComponent className="ourpartner pt-120">
         <Container>
@@ -33,58 +45,32 @@ const MyComponent = () => {
                 <Swiper
                 modules={[Autoplay]}
                 slidesPerView={5}
-                spaceBetween={0}
-                loop={true}
+                spaceBetween={20}
+                loop
                 speed={1500}
                 autoplay={{
                     delay: 1000,
                     disableOnInteraction: false,
-                    pauseOnMouseEnter: false,
                 }}
-                pagination={{
-                clickable: true,
-                }}
-                allowTouchMove={true}
                 >
-
-
-
-                <SwiperSlide>
-                <div className="slide">Slide 1</div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                <div className="slide">Slide 2</div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                <div className="slide">Slide 3</div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                <div className="slide">Slide 4</div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                <div className="slide">Slide 5</div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                <div className="slide">Slide 6</div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                <div className="slide">Slide 7</div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                <div className="slide">Slide 8</div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                <div className="slide">Slide 9</div>
-                </SwiperSlide>
-            </Swiper>
+                {partners.map((image, index) => (
+                    <SwiperSlide key={index}>
+                    <div className="slide">
+                        <Image
+                        src={image}
+                        alt={`Partner ${index + 1}`}
+                        width={180}
+                        height={100}
+                        style={{
+                            objectFit: "contain",
+                            width: "100%",
+                            height: "100%",
+                        }}
+                        />
+                    </div>
+                    </SwiperSlide>
+                ))}
+                </Swiper>
             </Row>
         </Container>
 
@@ -107,10 +93,10 @@ const StyledComponent = styled.section`
 }
 
 .slide {
-    height: 120px;
+    height: 140px;
     border-radius: 10px;
-    background: #f5f5f5;
-    border: 1px solid #ddd;
+    background: #f5f5f59a;
+    border: 1px solid #f5f5f5e1;
     display: flex;
     justify-content: center;
     align-items: center;

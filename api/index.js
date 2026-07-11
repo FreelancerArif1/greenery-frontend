@@ -75,7 +75,7 @@ export async function getProductPage() {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
   const data = await response.json();
-
+  console.log('Inedx='+data);
   return data;
 }
 
