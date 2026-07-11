@@ -103,8 +103,8 @@ const StyledComponent = styled.section`
       }
       &__item{
           border-radius: 20px;
-          box-shadow: 0 4px 10px 0 rgba(140, 140, 140, 0.26);
-          border: 1px solid #285E2F;
+          // box-shadow: 0 4px 10px 0 rgba(140, 140, 140, 0.26);
+          border: 1px solid #9191916e;
           padding: 32px 24px;
           span{
               font-size: 14px;
@@ -126,7 +126,7 @@ const StyledComponent = styled.section`
               position: relative;
               padding-top: calc(273 / 312 * 100%);
               margin-top: 15px;
-              border: 1px solid #285E2F;
+              border: 1px solid #9393936e;
               img{
                   position: absolute;
                   top: 0;
