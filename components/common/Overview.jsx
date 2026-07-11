@@ -10,7 +10,7 @@ const MyComponent = ({data, noButton}) => {
 
     console.log(data);
     return (
-        <StyledMyComponent className={'pt-80 pb-90'}>
+        <StyledMyComponent className={'pt-80 pb-100'}>
             <Container>
                 <Row>
                     <Col lg={2} md={12}></Col>
