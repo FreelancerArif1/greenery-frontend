@@ -179,7 +179,8 @@ const ConcernCard = styled.div`
   }
 
   .card-content {
-    padding: 40px 30px;
+    padding: 15px;
+    text-align:center;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -191,10 +192,16 @@ const ConcernCard = styled.div`
     font-size: 22px;
     font-weight: 600;
     color: #000;
-    margin: 0 0 12px 0;
+    // margin: 0 0 12px 0;
+    margin:0 auto;
+    text-align:center;
+    
     transition: color 0.4s cubic-bezier(0.4, 0, 0, 1);
     line-height: 1.4;
   }
+    .swiper-slide{
+      text-align:center;
+    }
 
   .concern-category {
     font-family: "Inter", sans-serif;

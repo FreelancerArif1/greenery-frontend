@@ -159,7 +159,7 @@ const StyledComponent = styled.section`
       position: relative;
         height: 100%;
         box-shadow: 0 4px 24px 0 rgba(152, 152, 152, 0.17);
-        border: 1px solid #285E2F;
+        border: 1px solid #cdcdcd93;
         border-radius: 20px;
         background-color: #FFF;
       &:hover{
@@ -172,18 +172,21 @@ const StyledComponent = styled.section`
       }
   }
   .testimonial__single{
-    padding: 40px 30px 60px 30px;
-    
-      border-radius: 20px;
-      min-height: 100%;
+    padding: 15px;
+    border-radius: 20px;
+    min-height: 100%;
+    text-align: center;
+
+
       img{
           width: 66px;
           height: 60px;
-          margin-bottom: 89px;
+          margin: 10px auto;
       }
       h5{
           font-size: 24px;
           line-height: 32px;
+          text-align:center;
           font-weight: 500;
           margin-bottom: 20px;
           @media(min-width: 1920px){
@@ -197,9 +200,11 @@ const StyledComponent = styled.section`
       }
       
       h6{
-          font-size: 18px;
-          line-height: 22px;
-          font-weight: 400;
+          margin-bottom: 0px;
+        text-align: start;
+        font-size: 16px;
+        text-align: justify;
+
           @media(min-width: 1920px){
               font-size: 18px;
               line-height: 27px;
@@ -264,6 +269,7 @@ const StyledComponent = styled.section`
         .testimonial__single{
             //width: 270px;
             //height: 350px;
+            text-align:center;
         }
         .value-slider-bottom{
             margin-left: 15px;

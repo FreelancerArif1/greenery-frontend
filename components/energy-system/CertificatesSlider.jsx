@@ -114,7 +114,7 @@ const StyledComponent = styled.section`
           }
           
           h6{
-              font-size: 20px;
+              font-size: 15px;
               line-height: 28px;
               font-weight: 500;
               color: #000;

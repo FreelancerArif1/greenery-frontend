@@ -170,8 +170,8 @@ const StyledComponent = styled.section`
   position: relative;
   width: 100%;
   overflow: hidden;
-    padding-top: 120px;
-    min-height: 100vh;
+    padding-top: 30px;
+    min-height: 85vh;
   .image-text-slider {
     position: absolute;
     top: 0;
@@ -356,7 +356,7 @@ const StyledComponent = styled.section`
   }
 
   h2 {
-    font-size: 56px;
+    font-size: 28px;
     font-weight: 500;
     color: #fff;
     line-height: 1.1;

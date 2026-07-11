@@ -1,11 +1,20 @@
 'use client'
-import React from 'react';
+import React, { useState } from "react";
 import styled from 'styled-components';
 import {Col, Container, Row} from "react-bootstrap";
 import reactHtmlParser from "react-html-parser";
 import {White} from "@/styles/globalStyleVars";
 
+
 const MyComponent = ({data }) => {
+const [expanded, setExpanded] = useState({});
+const truncateWords = (html, limit = 40) => {
+  const text = html.replace(/<[^>]+>/g, ""); // Remove HTML tags
+  const words = text.split(/\s+/);
+  if (words.length <= limit) return text;
+
+  return words.slice(0, limit).join(" ");
+};
 
     return (
         <StyledMyComponent className={'pt-120 pb-120'}>
@@ -24,7 +33,45 @@ const MyComponent = ({data }) => {
                                                 </div>
                                                 <div>
                                                     <h4>{reactHtmlParser(element?.data?.subtitle)}</h4>
-                                                    <p>{reactHtmlParser(element?.data?.description ? element?.data?.description : element?.data?.short_desc)}</p>
+                                                    {/* <p>{reactHtmlParser(element?.data?.description ? element?.data?.description : element?.data?.short_desc)}</p> */}
+
+
+
+
+                                                    <p>
+                                                        {expanded[element.id]
+                                                            ? reactHtmlParser(
+                                                                element?.data?.description || element?.data?.short_desc
+                                                            )
+                                                            : truncateWords(
+                                                                element?.data?.description || element?.data?.short_desc,
+                                                                40
+                                                            )}
+                                                    </p>
+
+                                                    {(
+                                                    (element?.data?.description || element?.data?.short_desc)
+                                                        ?.replace(/<[^>]+>/g, "")
+                                                        .split(/\s+/).length > 40
+                                                    ) && (
+                                                    <button
+                                                        className="see-more"
+                                                        onClick={() =>
+                                                        setExpanded((prev) => ({
+                                                            ...prev,
+                                                            [element.id]: !prev[element.id],
+                                                        }))
+                                                        }
+                                                    >
+                                                        {expanded[element.id] ? "See Less" : "See More.."}
+                                                    </button>
+                                                    )}
+
+
+
+
+
+
                                                 </div>
                                             </div>
                                         </div>
@@ -40,6 +87,15 @@ const MyComponent = ({data }) => {
 };
 
 const StyledMyComponent = styled.section`
+    .see-more{
+        background: none;
+        border: none;
+        color: #333;
+        text-transform: lowercase;
+        padding: 0px 0px 0px 0px;
+        font-size: 16px;
+        border-bottom: 0.5px solid #333333bd;
+    }
 
     position: relative;
     overflow: hidden;
@@ -60,11 +116,13 @@ const StyledMyComponent = styled.section`
 
     .single-item {
         transition: transform 0.3s ease;
-        background: #629D59 !important;
+        // background: #629D59 !important;
+        
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
         height: 100%;
         border-radius: 20px;
         .wrapper {
-            padding: 24px;
+            padding: 15px;
             height: 90%;
             .content-wrapper {
                 height: 100%;
@@ -81,23 +139,30 @@ const StyledMyComponent = styled.section`
             justify-content: center;
             align-items: center;
             margin-bottom: 50px;
+            margin:10px auto;
             background: ${White};
+            border: 1px solid #cdcdcd;
         }
 
         h4 {
-            color: ${White};
+            // color: ${White};
+            color: #333;
             font-family: "Inter";
             font-size: 24px;
             font-style: normal;
             font-weight: 500;
             line-height: 140%; /* 33.6px */
+            text-align:center;
             margin-bottom: 15px;
         }
         p{
-            color: ${White};
+            // color: ${White};
+            color: #333;
             margin-bottom: 0px;
             text-align: start;
-            font-size: 18px;
+            font-size: 16px;
+            text-align: justify;
+
         }
     }
     .col-lg-4{

@@ -53,9 +53,16 @@ const StyledInnerBanner = styled.section`
 
     h1 {
         color: #ffffff;
-        font-size: 64px;
-        font-weight: 500;
-        line-height: 84px;
+        // font-size: 64px;
+        // font-weight: 500;
+        // line-height: 84px;
+
+
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 60px;
+        text-transform: uppercase;
+
         font-family: ${title};
         //text-transform: capitalize;
         z-index: 2;

@@ -62,7 +62,7 @@ export default async function MyComponent() {
             img={inner_banner?.images?.list?.[0]?.full_path}
           />
           <Overview data={overview} noButton/>
-          <CounterWrapper data={overview}/>
+          {/* <CounterWrapper data={overview}/> */}
           <Purposes data={mission_vision}/>
           <ValueSlider data={value_slider} secondaryBG={false}/>
           <Livenza data={sister_concern}/>

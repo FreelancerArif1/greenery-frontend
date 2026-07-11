@@ -170,16 +170,17 @@ const ConcernCard = styled.div`
   }
 
   .card-content {
-    padding: 40px 30px;
+    padding: 20px;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    text-align:center;
   }
 
   .concern-name {
     font-family: "Banana Grotesk", sans-serif;
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 600;
     color: #000;
     margin: 0 0 12px 0;

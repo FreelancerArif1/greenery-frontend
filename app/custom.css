@@ -178,3 +178,9 @@ background: #285e2f;
 .menuproductimage img{
     max-height: 100px !important;
 }
+.justifyClass{
+    text-align: justify;
+}
+.uppertitle{
+    font-size: 20px;
+}

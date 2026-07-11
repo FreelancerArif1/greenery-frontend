@@ -23,7 +23,7 @@ const MyComponent = ({data, classes}) => {
                             <Title
                               margin={'0 0 30px 0'}
                                 text={data?.section_data?.subtitle}/>
-                            <p>GreeneryES empowers partners with globally certified clean-energy technologies and the operational backbone of the Livenza Group. Whether you focus on solar, storage, HVAC, or EV charging, our ecosystem helps you scale your business with confidence.</p>
+                            <p className='justifyClass'>GreeneryES empowers partners with globally certified clean-energy technologies and the operational backbone of the Livenza Group. Whether you focus on solar, storage, HVAC, or EV charging, our ecosystem helps you scale your business with confidence.</p>
                             <div className="beapartner">
                                 <MainButton
                                 margin={'40px 0 0 0'}

@@ -36,8 +36,8 @@ export default function Zigzag({section}) {
           </Col>
           <Col lg={{span:6, offset:1}} className="zigzag_top__right">
             <div className="zigzag_top__right__wrapper">
-              <Title text={section?.posts?.list?.[0]?.data?.subtitle} marginSm={'0 0 20px 0'}/>
-              <p>{reactHtmlParser(section?.posts?.list?.[0]?.data?.description)}</p>
+              <Title classname={'uppertitle'} text={section?.posts?.list?.[0]?.data?.subtitle} marginSm={'0 0 20px 0'}/>
+              <p className='justifyClass'>{reactHtmlParser(section?.posts?.list?.[0]?.data?.description)}</p>
             </div>
           </Col>
         </Row>
@@ -48,7 +48,7 @@ export default function Zigzag({section}) {
           <Col lg={5} className={'zigzag_bottom__left'}>
             <div className="zigzag_bottom__left__wrapper">
               <Title text={section?.posts?.list?.[1]?.data?.subtitle} marginSm={'0 0 20px 0'} />
-              <p>{reactHtmlParser(section?.posts?.list?.[1]?.data?.description)}</p>
+              <p className='justifyClass'>{reactHtmlParser(section?.posts?.list?.[1]?.data?.description)}</p>
             </div>
           </Col>
           <Col lg={{span:6, offset:1}} className="zigzag_bottom__right">
