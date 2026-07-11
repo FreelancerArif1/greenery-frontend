@@ -184,3 +184,8 @@ background: #285e2f;
 .uppertitle{
     font-size: 20px;
 }
+.mapwrapper{
+padding: 5px;
+    background: #b5b5b533;
+    border-radius: 10px;
+}

@@ -192,8 +192,9 @@ const MyComponent = ({data}) => {
                             </div>
                         </Col>
                         <Col lg={{span:6}}>
-                           <GoogleMap />
-
+                          <div className="mapwrapper">
+                            <GoogleMap />
+                          </div>
                         </Col>
                         {/*<Col lg={{span: 6, offset: 1}} className='modal-data__content mobile-version'>*/}
                         {/*    <div className={'d-flex justify-content-between form__phoneEmail'}>*/}

@@ -72,10 +72,10 @@ export default function ComplianceSlider({ data }) {
                       <div className="compliance-slider-wrapper__item__img">
                         <img src={item?.images?.[0]?.full_path} alt={item?.data?.subtitle} />
                       </div>
-                      {
+                      {/* {
                         item?.data?.description &&
                         <p>{reactHtmlParser(item?.data?.description)}</p>
-                      }
+                      } */}
                     </div>
                   </SwiperSlide>
                 ))}
@@ -113,7 +113,7 @@ const StyledComponent = styled.section`
           }
           
           h6{
-              font-size: 20px;
+              font-size: 18px;
               line-height: 28px;
               font-weight: 500;
               color: #000;

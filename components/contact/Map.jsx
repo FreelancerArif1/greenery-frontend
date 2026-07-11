@@ -9,7 +9,7 @@ const GoogleMap = () => {
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d233330.7004229091!2d90.14851865834102!3d23.96778740569689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c500352c3d9f%3A0x17a7a429602aabba!2sGreenery%20Energy%20Solution%20LTD!5e0!3m2!1sen!2sbd!4v1782552028116!5m2!1sen!2sbd"
         width="100%"
-        height="450"
+        height="350"
         style={{ border: 0 }}
         allowFullScreen
         loading="lazy"

@@ -60,7 +60,9 @@ export default function FeatureProjects({ data }) {
                       <Image fill src={item?.images?.[0]?.full_path} alt={item?.data?.subtitle}/>
                       <div className="content">
                         <span>{reactHtmlParser(item?.data?.short_desc)}</span>
-                        <h6>{reactHtmlParser(item?.data?.subtitle)}</h6>
+                        <h6 className="subtitle">
+                          {reactHtmlParser(item?.data?.subtitle)}
+                        </h6>
                       </div>
                     </div>
                   </SwiperSlide>
@@ -75,6 +77,13 @@ export default function FeatureProjects({ data }) {
 }
 
 const StyledComponent = styled.section`
+  .subtitle {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
     .nav-buttons{
         width: 100%;
         display: flex;
