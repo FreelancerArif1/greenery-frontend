@@ -273,7 +273,7 @@ const MyComponent = () => {
             <StyledMenu className={`${scrollDown ? 'scroll-down' : ''} ${scrollUp ? 'scroll-up ' : ''}  menu-bar`}>
                 <Container>
                     <Row className='desktop-menu'>
-                        <Col sm={3} className='align-items-center d-flex'>
+                        <Col sm={2} className='align-items-center d-flex'>
                             <Link prefetch={true} href={'/'}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="148" height="30" viewBox="0 0 148 30"
                                      fill="none">
@@ -460,47 +460,68 @@ const MyComponent = () => {
                                 </svg>
                             </Link>
                         </Col>
-                        <Col sm={9}>
+                        <Col sm={10}>
                             <div className={'desktop-menu__items'}>
                                 <ul className="">
-                                    <li className={pathname === '/' ? 'active' : ''}><Link href={'/'}
-                                                                                           prefetch={true}>Home</Link>
+                                    <li className={pathname === '/' ? 'active' : ''}>
+                                        <Link href={'/'}  prefetch={true}>Home</Link>
                                     </li>
                                     <li className={pathname === '/about-us' ? 'active' : ''}><Link
-                                        href={'/about-us'}>About Us</Link></li>
+                                        href={'/about-us'}>About Us</Link>
+                                    </li>
                                     <li className={pathname.startsWith('/renewable-energy') ? 'active has-sub' : 'has-sub'}>
                                         <Link href="#" onClick={(e) => e.preventDefault()}>Product</Link>
                                         <ul>
-                                            
-                                        <div className='menudropdown'>
-                                                <div className={'has-sub__links'}>
-                                                    <Link prefetch={true} href={'/renewable-energy/solar-solutions'} className={pathname === '/renewable-energy/solar-solutions' ? 'active' : ''}>
-                                                        <li
-                                                            onMouseEnter={() => setActiveImageIndex(0)}>Solar Solutions
-                                                        </li>
-                                                    </Link>
-                                                    <Link prefetch={true} href={'/renewable-energy/battery-storage-system'} className={pathname === '/renewable-energy/battery-storage-system' ? 'active' : ''}>
-                                                        <li
-                                                            onMouseEnter={() => setActiveImageIndex(1)}>Battery Storage System
-                                                        </li>
-                                                    </Link>
-                                                    <Link prefetch={true} href={'/renewable-energy/ev-chargers'} className={pathname === '/renewable-energy/ev-chargers' ? 'active' : ''}>
-                                                        <li
-                                                            onMouseEnter={() => setActiveImageIndex(2)}>EV Charger
-                                                        </li>
-                                                    </Link>
-                                                    <Link prefetch={true} href={'/renewable-energy/hvac-solution'} className={pathname === '/renewable-energy/hvac-solution' ? 'active' : ''}>
-                                                        <li
-                                                            onMouseEnter={() => setActiveImageIndex(3)}>HVAC Solution
-                                                        </li>
-                                                    </Link>
-                                                </div>
-                                        </div>
-                                            
-
-
+                                            <div className='menudropdown'>
+                                                    <div className={'has-sub__links'}>
+                                                        <Link prefetch={true} href={'/renewable-energy/solar-solutions'} className={pathname === '/renewable-energy/solar-solutions' ? 'active' : ''}>
+                                                            <li
+                                                                onMouseEnter={() => setActiveImageIndex(0)}>Solar Solutions
+                                                            </li>
+                                                        </Link>
+                                                        <Link prefetch={true} href={'/renewable-energy/battery-storage-system'} className={pathname === '/renewable-energy/battery-storage-system' ? 'active' : ''}>
+                                                            <li
+                                                                onMouseEnter={() => setActiveImageIndex(1)}>Battery Storage System
+                                                            </li>
+                                                        </Link>
+                                                        <Link prefetch={true} href={'/renewable-energy/ev-chargers'} className={pathname === '/renewable-energy/ev-chargers' ? 'active' : ''}>
+                                                            <li
+                                                                onMouseEnter={() => setActiveImageIndex(2)}>EV Charger
+                                                            </li>
+                                                        </Link>
+                                                        <Link prefetch={true} href={'/renewable-energy/hvac-solution'} className={pathname === '/renewable-energy/hvac-solution' ? 'active' : ''}>
+                                                            <li
+                                                                onMouseEnter={() => setActiveImageIndex(3)}>HVAC Solution
+                                                            </li>
+                                                        </Link>
+                                                    </div>
+                                            </div>
                                         </ul>
                                     </li>
+
+
+
+                                    <li className={'has-sub'}>
+                                        <Link href="#" onClick={(e) => e.preventDefault()}>Solutions</Link>
+                                        <ul>
+                                            <div className='menudropdown'>
+                                                    <div className={'has-sub__links'}>
+                                                        <Link prefetch={true} href={'/renewable-energy/solar-solutions'} className={pathname === '/renewable-energy/solar-solutions' ? 'active' : ''}>
+                                                            <li
+                                                                onMouseEnter={() => setActiveImageIndex(0)}> Energy Storage Solutions
+                                                            </li>
+                                                        </Link>
+                                                        <Link prefetch={true} href={'/renewable-energy/battery-storage-system'} className={pathname === '/renewable-energy/battery-storage-system' ? 'active' : ''}>
+                                                            <li
+                                                                onMouseEnter={() => setActiveImageIndex(1)}>Projects Highlights
+                                                            </li>
+                                                        </Link>
+                                                    </div>
+                                            </div>
+                                        </ul>
+                                    </li>
+
+
                                     <li className={pathname === '/our-supply-chain' ? 'active' : ''}>
                                         <Link prefetch={true} href={'/our-supply-chain'}>Our Supply Chain</Link>
                                     </li>
@@ -858,6 +879,7 @@ const StyledMenu = styled.section`
     align-items: center;
     //transition: background .4s ease;
     transition: all 0.6s cubic-bezier(0.4, 0, 0, 1) 0s;
+    border-bottom: 1px solid #e5e3e38c !important;
 
     .menu-bar {
         transition: transform 0.8s ease; /* Add transition property for smooth transform */
@@ -1209,7 +1231,7 @@ const StyledMenu = styled.section`
                         a {
                             &:last-child {
                                 li {
-                                    border-bottom: 1px solid transparent;
+                                    // border-bottom: 1px solid transparent;
                                 }
                             }
 
@@ -1624,8 +1646,12 @@ const StyledMenu = styled.section`
         justify-content: start;
         align-items: center;
         padding: 18px 20px;
-        //border-bottom: 1px solid transparent;
+        border-bottom: 1px solid #e5e3e347;
     }
+    .menudropdown li:last-child{
+        border-bottom: none;
+    }
+  
 
     .desktop-menu ul li.has-sub ul a {
         color: ${white};
@@ -1645,6 +1671,9 @@ const StyledMenu = styled.section`
 
     .product_title, .product_short{
         color: #000 !important;
+    }
+    .menudropdown{
+        // border: 1px solid #e5e3e347;
     }
 
 `;
